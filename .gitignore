@@ -1,0 +1,5 @@
+*/treesitter
+nimcache
+*.exe
+*.swp
+test*
