@@ -15,7 +15,8 @@ var
   name = "treesitter_css"
   cmd = when defined(Windows): "cmd /c " else: ""
 
-mkDir("treesitter")
+if fileExists(name & ".nimble"):
+  mkDir("treesitter")
 
 task setup, "Checkout and generate":
   if gorgeEx(cmd & "nimgen").exitCode != 0:

@@ -14,9 +14,9 @@ requires "nimgen >= 0.5.0"
 var
   name = "treesitter"
   cmd = when defined(Windows): "cmd /c " else: ""
-  lang = "c"
 
-mkDir(name)
+if fileExists(name & ".nimble"):
+  mkDir(name)
 
 task setup, "Checkout and generate":
   if gorgeEx(cmd & "nimgen").exitCode != 0:
