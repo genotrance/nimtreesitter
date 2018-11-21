@@ -14,6 +14,7 @@ requires "nimgen >= 0.5.0", "treesitter >= " & version
 var
   name = "treesitter_go"
   cmd = when defined(Windows): "cmd /c " else: ""
+  cc = when defined(MacOSX): "clang" else: "gcc"
 
 if fileExists(name & ".nimble"):
   mkDir("treesitter")
@@ -28,4 +29,4 @@ before install:
   setupTask()
 
 task test, "Run tests":
-  exec "nim c --gcc.linkerexe:\"g++\" -f -r tests/t" & name & ".nim"
+  exec "nim c --" & cc & ".linkerexe:\"g++\" -f -r tests/t" & name & ".nim"
