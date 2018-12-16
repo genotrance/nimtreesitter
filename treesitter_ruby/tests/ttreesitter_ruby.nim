@@ -1,5 +1,5 @@
 import treesitter/runtime
-import treesitter/ruby
+import treesitter_ruby/ruby
 
 var p = tsParserNew()
 

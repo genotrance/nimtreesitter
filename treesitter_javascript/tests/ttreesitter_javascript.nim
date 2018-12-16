@@ -1,5 +1,5 @@
 import treesitter/runtime
-import treesitter/javascript
+import treesitter_javascript/javascript
 
 var p = tsParserNew()
 

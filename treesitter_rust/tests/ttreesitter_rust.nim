@@ -1,5 +1,5 @@
 import treesitter/runtime
-import treesitter/rust
+import treesitter_rust/rust
 
 var p = tsParserNew()
 

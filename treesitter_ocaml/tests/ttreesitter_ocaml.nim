@@ -1,5 +1,5 @@
 import treesitter/runtime
-import treesitter/ocaml
+import treesitter_ocaml/ocaml
 
 var p = tsParserNew()
 

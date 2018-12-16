@@ -1,5 +1,5 @@
 import treesitter/runtime
-import treesitter/scala
+import treesitter_scala/scala
 
 var p = tsParserNew()
 

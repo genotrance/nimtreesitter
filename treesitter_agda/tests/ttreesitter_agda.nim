@@ -1,5 +1,5 @@
 import treesitter/runtime
-import treesitter/agda
+import treesitter_agda/agda
 
 var p = tsParserNew()
 

@@ -1,5 +1,5 @@
 import treesitter/runtime
-import treesitter/haskell
+import treesitter_haskell/haskell
 
 var p = tsParserNew()
 

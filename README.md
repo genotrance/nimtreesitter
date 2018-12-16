@@ -7,7 +7,7 @@ __Installation__
 treesitter can be installed via [Nimble](https://github.com/nim-lang/nimble):
 
 ```
-> nimble install https://github.com/genotrance/nimtreesitter?subdir=treesitter
+> nimble install treesitter
 ```
 
 This will download, wrap and install treesitter in the standard Nimble package location, typically ~/.nimble. Once installed, it can be imported into any Nim program.
@@ -15,7 +15,7 @@ This will download, wrap and install treesitter in the standard Nimble package l
 Individual language grammars can be installed as well to parse source files:
 
 ```
-> nimble install https://github.com/genotrance/nimtreesitter?subdir=treesitter_c
+> nimble install treesitter_c
 ```
 
 This will download, wrap and install the C grammar. Given treesitter is a dependency, any language grammar can be installed directly and treesitter will get installed automatically.

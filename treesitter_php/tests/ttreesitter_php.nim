@@ -1,5 +1,5 @@
 import treesitter/runtime
-import treesitter/php
+import treesitter_php/php
 
 var p = tsParserNew()
 

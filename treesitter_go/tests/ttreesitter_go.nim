@@ -1,5 +1,5 @@
 import treesitter/runtime
-import treesitter/go
+import treesitter_go/go
 
 var p = tsParserNew()
 
