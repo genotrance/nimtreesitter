@@ -50,14 +50,14 @@ for lang in langs:
       exec "nimble develop -y"
       exec "nimble setup"
       exec "nimble test"
-      if uninstall:
-        exec "nimble uninstall -y " & flang
+
+    if uninstall:
+      exec "nimble uninstall -y " & flang
 
     if git:
       exec "git add " & flang & ".cfg"
       exec "git add " & flang & ".nimble"
       exec "git add -f tests/ttreesitter_" & lang & ".nim"
 
-if test and uninstall:
-  withDir("treesitter"):
-    exec "nimble uninstall -y"
+if uninstall:
+  exec "nimble uninstall -y treesitter"
