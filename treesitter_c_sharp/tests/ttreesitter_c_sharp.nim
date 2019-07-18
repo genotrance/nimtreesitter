@@ -1,4 +1,4 @@
-import treesitter/runtime
+import treesitter/api
 import treesitter_c_sharp/c_sharp
 
 var p = tsParserNew()

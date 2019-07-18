@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.1.0"
+version       = "0.1.1"
 author        = "genotrance"
 description   = "tree-sitter-python wrapper for Nim"
 license       = "MIT"
@@ -17,7 +17,7 @@ var
   cc = when defined(MacOSX): "clang" else: "gcc"
 
 if fileExists(name & ".nimble"):
-  mkDir("treesitter")
+  mkDir(name)
 
 task setup, "Checkout and generate":
   if gorgeEx(cmd & "nimgen").exitCode != 0:

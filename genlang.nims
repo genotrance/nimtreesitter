@@ -11,6 +11,7 @@ var
   git = false
   test = false
   uninstall = false
+  clean = false
 
 for i in 3 .. paramCount():
   case paramStr(i):
@@ -22,6 +23,12 @@ for i in 3 .. paramCount():
       test = true
     of "--uninstall":
       uninstall = true
+    of "--clean":
+      clean = true
+
+if clean:
+  withDir("treesitter"):
+    rmDir("treesitter")
 
 if test:
   withDir("treesitter"):
@@ -46,13 +53,17 @@ for lang in langs:
           replace("${HLANG}", lang.replace("_", "-")))
 
   withDir(flang):
+    if clean:
+      rmDir("treesitter")
+      rmDir(flang)
+
     if test:
       exec "nimble develop -y"
       exec "nimble setup"
       exec "nimble test"
 
     if uninstall:
-      exec "nimble uninstall -y " & flang
+      discard gorgeEx("nimble uninstall -y " & flang)
 
     if git:
       exec "git add " & flang & ".cfg"
@@ -60,4 +71,4 @@ for lang in langs:
       exec "git add -f tests/ttreesitter_" & lang & ".nim"
 
 if uninstall:
-  exec "nimble uninstall -y treesitter"
+  discard gorgeEx("nimble uninstall -y treesitter")
